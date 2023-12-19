@@ -1,0 +1,267 @@
+<ion-page class="page_wrapper">
+    <!-- header -->
+    <ion-header class="headerWrap">
+        <!-- title bar -->
+        <div class="titleBar">
+            <div class="title_nav">
+                <button type="button" class="btn_head_home on"><span>Home</span></button>
+                <button type="button" class="btn_head_list"><span>List</span></button>
+            </div>
+            <div class="title_btn right">
+                <button type="button" class="btn_head_logout"><span>로그아웃</span></button>
+            </div>
+        </div>
+        <!-- //title bar -->
+    </ion-header>
+    <!-- //header -->
+
+    <!-- contents area -->
+    <ion-content class="contentsWrap">
+        <div class="web_container sub_container">
+            <!-- 통계 -->
+            <div class="home_chart">
+                <swiper :modules="modules" :pagination="true" :space-between="30">
+                    <swiper-slide>
+                        <h2 class="tit">자산 현황 <sub>총 자산 138</sub></h2>
+                        <div class="chart_area cont_loading">chart area 1</div>
+                    </swiper-slide>
+                    <swiper-slide>
+                        <h2 class="tit">자산 현황 <sub>총 자산 138</sub></h2>
+                        <div class="chart_area">chart area 2</div>
+                    </swiper-slide>
+                </swiper>
+            </div>
+            <!-- //통계 -->
+
+            <!-- white card -->
+            <div class="cont_card">
+                <v-date-picker show-adjacent-months class="home_calendar"></v-date-picker>
+
+                <!-- home contents group -->
+                <div class="home_cont">
+                    <!-- title -->
+                    <div class="title">
+                        <h3 class="tit date"><strong>10월14일</strong></h3>
+                        <div class="opt">
+                            <button type="button" class="btn_more"><span>더보기</span></button>
+                        </div>
+                    </div>
+                    <!-- //title -->
+
+                    <!-- info -->
+                    <div class="info">
+                        <dl>
+                            <dt>추가</dt><dd><span>2</span></dd>
+                        </dl>
+                        <dl>
+                            <dt>수정</dt><dd class="txtc_blue"><span>1</span></dd>
+                        </dl>
+                        <dl>
+                            <dt>삭제</dt><dd class="txtc_red"><span>2</span></dd>
+                        </dl>
+                    </div>
+                    <!-- //info -->
+
+                    <!-- table wrapper -->
+                    <div class="tableWrap">
+                        <table class="table01">
+                            <colgroup>
+                                <col />
+                                <col style="width: 20%;" />
+                                <col style="width: 25%;" />
+                                <col style="width: 25%;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">자산종류</th>
+                                    <th scope="col">사용자</th>
+                                    <th scope="col">자산상태</th>
+                                    <th scope="col">반납일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td><span>불출</span></td>
+                                    <td><span>23.07.01</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td><span>불출</span></td>
+                                    <td><span>23.07.01</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //table wrapper -->
+                </div>
+                <!-- //home contents group -->
+
+                <!-- home contents group -->
+                <div class="home_cont">
+                    <!-- title -->
+                    <div class="title">
+                        <h3 class="tit">하드웨어 변경이력</h3>
+                        <div class="opt">
+                            <button type="button" class="btn_more"><span>더보기</span></button>
+                        </div>
+                    </div>
+                    <!-- //title -->
+
+                    <!-- table wrapper -->
+                    <div class="tableWrap">
+                        <table class="table01">
+                            <colgroup>
+                                <col style="width: 20%;" />
+                                <col style="width: 25%;" />
+                                <col />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">자산종류</th>
+                                    <th scope="col">사용자</th>
+                                    <th scope="col">반납일/반납기한</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td>
+                                        <div class="data_return">
+                                            <span>23.07.01</span>/<span>23.07.01</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td>
+                                        <div class="data_return">
+                                            <span>-</span>/<span>23.07.01</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //table wrapper -->
+                </div>
+                <!-- //home contents group -->
+
+                <!-- home contents group -->
+                <div class="home_cont">
+                    <!-- title -->
+                    <div class="title">
+                        <h3 class="tit">소프트웨어 변경이력</h3>
+                        <div class="opt">
+                            <button type="button" class="btn_more"><span>더보기</span></button>
+                        </div>
+                    </div>
+                    <!-- //title -->
+
+                    <!-- table wrapper -->
+                    <div class="tableWrap">
+                        <table class="table01">
+                            <colgroup>
+                                <col style="width: 20%;" />
+                                <col style="width: 25%;" />
+                                <col />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">자산종류</th>
+                                    <th scope="col">사용자</th>
+                                    <th scope="col">반납일/반납기한</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td>
+                                        <div class="data_return">
+                                            <span>23.07.01</span>/<span>23.07.01</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td>
+                                        <div class="data_return">
+                                            <span>-</span>/<span>23.07.01</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //table wrapper -->
+                </div>
+                <!-- //home contents group -->
+
+                <!-- home contents group -->
+                <div class="home_cont">
+                    <!-- title -->
+                    <div class="title">
+                        <h3 class="tit">반납 예정</h3>
+                        <div class="opt">
+                            <button type="button" class="btn_more"><span>더보기</span></button>
+                        </div>
+                    </div>
+                    <!-- //title -->
+
+                    <!-- table wrapper -->
+                    <div class="tableWrap">
+                        <table class="table01">
+                            <colgroup>
+                                <col style="width: 20%;" />
+                                <col style="width: 25%;" />
+                                <col />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">자산종류</th>
+                                    <th scope="col">사용자</th>
+                                    <th scope="col">반납일/반납기한</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td>
+                                        <div class="data_return">
+                                            <span>23.07.01</span>/<span>23.07.01</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span>laptop</span></td>
+                                    <td><span>송상진</span></td>
+                                    <td>
+                                        <div class="data_return">
+                                            <span>-</span>/<span>23.07.01</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //table wrapper -->
+                </div>
+                <!-- //home contents group -->
+
+                <div class="home_cont_btn_area">
+                    <button type="button" class="btn01"><span>현재 기기를 자산으로 등록하기 </span></button>
+                </div>
+            </div>
+            <!-- //white card -->
+        </div>
+
+    </ion-content>
+    <!-- //contents area -->
+</ion-page>

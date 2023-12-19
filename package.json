@@ -1,0 +1,36 @@
+{
+	"name": "bizMOB4_base_publishing",
+	"version": "0.0.1",
+	"private": true,
+	"description": "An Ionic project",
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build": "vue-cli-service build"
+	},
+	"dependencies": {
+		"@ionic/vue": "^6.0.0",
+		"@ionic/vue-router": "^6.0.0",
+		"@vue/preload-webpack-plugin": "^2.0.0",
+		"core-js": "^3.6.5",
+		"esm": "^3.2.25",
+		"sass": "^1.52.1",
+		"sass-loader": "^12.6.0",
+		"swiper": "^11.0.3",
+		"vue": "^3.2.21",
+		"vue-router": "^4.0.12",
+		"vuetify": "^3.3.23"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.6.0",
+		"@typescript-eslint/parser": "^5.6.0",
+		"@vue/cli-plugin-babel": "~5.0.0-rc.1",
+		"@vue/cli-plugin-eslint": "~5.0.0-rc.1",
+		"@vue/cli-plugin-router": "~5.0.0-rc.1",
+		"@vue/cli-plugin-typescript": "~5.0.0-rc.1",
+		"@vue/cli-service": "5.0.4",
+		"@vue/eslint-config-typescript": "^9.1.0",
+		"eslint": "^8.4.1",
+		"eslint-plugin-vue": "^8.2.0",
+		"typescript": "^4.9.5"
+	}
+}

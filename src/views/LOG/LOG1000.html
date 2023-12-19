@@ -1,0 +1,36 @@
+<ion-page class="page_wrapper Login_page">
+  <!-- contents area -->
+  <ion-content class="contentsWrap">
+    <fieldset>
+      <legend>Login</legend>
+      <h1>AMS asset management system</h1>
+      
+      <div class="login_inp_row id error">
+        <input type="text" id="" placeholder="아이디 입력" />
+      </div>
+      <div class="login_inp_row pw error">
+        <input type="password" id="" placeholder="비밀번호 입력" />
+        <!-- btn_pw :: "show" class toggle -->
+        <button type="button" class="btn_pw" @click="pw = !pw" :class="{show : pw}"><span>password show/hide</span></button>
+      </div>
+      <p class="txt_inp_guide cen none"><em>아이디 또는 비밀번호를 확인해 주세요.</em></p>
+
+      <div class="btn_area">
+        <button type="button" class="btn_login" @click="bt_loading = !bt_loading" :class="{bt_loading: bt_loading}"><span>로그인</span></button>
+      </div>
+
+      <div class="login_chk">
+        <label><input type="checkbox" id="" name="" /><span>아이디 저장</span></label>
+        <button type="button"><span>비밀번호 찾기</span></button>
+      </div>
+    </fieldset>
+  </ion-content>
+  <!-- //contents area -->
+
+  <!-- footer -->
+  <ion-footer>
+    <p class="copyright">© 2023 Mobile C&amp;C Corp. All Rights Reserved</p>
+  </ion-footer>
+  <!-- //footer -->
+
+</ion-page>
