@@ -1,15 +1,15 @@
 /** Default Font */
 @font-face {
   font-family: "NotoSansKR"; font-style: normal; font-weight: normal;
-  src: url("/public/fonts/NotoSansKR-Regular.otf") format("opentype");
+  src: url("../../../public/fonts/SCDream4.otf") format("opentype");
 }
 @font-face {
   font-family: "NotoSansKR"; font-style: normal; font-weight: 500;
-  src: url("/public/fonts/NotoSansKR-Medium.otf") format("opentype");
+  src: url("../../../public/fonts/SCDream6.otf") format("opentype");
 }
 @font-face {
   font-family: "NotoSansKR"; font-style: normal; font-weight: bold;
-  src: url("/public/fonts/NotoSansKR-Bold.otf") format("opentype");
+  src: url("../../../public/fonts/SCDream8.otf") format("opentype");
 }
 
 /** Ionic Default Font Setting */
@@ -17,17 +17,6 @@
   --ion-default-font: "NotoSansKR", sans-serif;
   --color: #434343;
 }
-
-
-/*******************************************
- * 이 이후 내용은 예시로 작성된 CSS입니다. *
- * 내용 제거 후 CSS를 작성하시면 됩니다.   *
- *******************************************/
-
-
-/**
- * Common
- */
 
 /** Root Setting */
 :root {
