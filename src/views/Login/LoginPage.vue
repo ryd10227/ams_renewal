@@ -4,7 +4,7 @@ import { defineComponent } from "vue";
 import * as CryptoJS from 'crypto-js';
 
 export default defineComponent({
-	name: "LOG1000",
+	name: "LoginPage",
 	components: {},
 	data() {
 		return {

@@ -4,7 +4,7 @@ import { defineComponent, ref } from "vue";
 
 
 export default defineComponent({
-	name: "FPW1000",
+	name: "FindPwPage",
 	components: {},
 	data() {
 		return {

@@ -1,5 +1,5 @@
 <!-- 대시보드 페이지 중 날짜별 변경이력 테이블 컴포넌트 -->
-<template src="./TableChangeHistoryByDate.html"></template>
+<template src="./TableChangedHistoryByDate.html"></template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import { VDatePicker } from 'vuetify/labs/VDatePicker'

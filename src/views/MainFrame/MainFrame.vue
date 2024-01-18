@@ -4,6 +4,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
+	name: "MainFrame",
     methods: {
         // 로그아웃 버튼 클릭 이벤트
         logout() {

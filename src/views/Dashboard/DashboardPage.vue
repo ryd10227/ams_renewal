@@ -5,19 +5,13 @@ import { VDatePicker } from 'vuetify/labs/VDatePicker'
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import "swiper/css/pagination";
-
-import ChartAsset from '../../components/Dashboard/ChartAsset.vue'
-import CalendarDate from '../../components/Dashboard/CalendarDate.vue';
-import TableChangePerDate from '../../components/Dashboard/TableChangeHistoryByDate.vue';
-import TableHW from '../../components/Dashboard/TableHW.vue';
-import TableSW from '../../components/Dashboard/TableSW.vue';
-import TableDueDate from '../../components/Dashboard/TableDueDate.vue';
+import { ChartAsset, CalendarDate, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate } from '@/components/Dashboard';
 
 export default defineComponent({
-  name: "HOM1000",
+  name: "DashboardPage",
   components: {
     VDatePicker,
-    ChartAsset, CalendarDate, TableChangePerDate, TableHW, TableSW, TableDueDate,
+    ChartAsset, CalendarDate, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate,
   },
   setup() {
     // const onSwiper = (swiper: any) => {
