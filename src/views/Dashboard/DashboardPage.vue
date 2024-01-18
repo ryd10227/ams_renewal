@@ -1,4 +1,4 @@
-<template src="./HOM1000.html"></template>
+<template src="./DashboardPage.html"></template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import { VDatePicker } from 'vuetify/labs/VDatePicker'
@@ -6,12 +6,12 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import "swiper/css/pagination";
 
-import ChartAsset from '../../components/ChartAsset.vue'
-import CalendarDate from '../../components/CalendarDate.vue';
-import TableChangePerDate from '../../components/TableChangeHistoryByDate.vue';
-import TableHW from '../../components/TableHW.vue';
-import TableSW from '../../components/TableSW.vue';
-import TableDueDate from '../../components/TableDueDate.vue';
+import ChartAsset from '../../components/Dashboard/ChartAsset.vue'
+import CalendarDate from '../../components/Dashboard/CalendarDate.vue';
+import TableChangePerDate from '../../components/Dashboard/TableChangeHistoryByDate.vue';
+import TableHW from '../../components/Dashboard/TableHW.vue';
+import TableSW from '../../components/Dashboard/TableSW.vue';
+import TableDueDate from '../../components/Dashboard/TableDueDate.vue';
 
 export default defineComponent({
   name: "HOM1000",

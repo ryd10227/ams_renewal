@@ -1,4 +1,4 @@
-<template src="./LOG1000.html"></template>
+<template src="./LoginPage.html"></template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import * as CryptoJS from 'crypto-js';

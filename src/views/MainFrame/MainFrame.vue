@@ -1,4 +1,4 @@
-<template src="./MFR1000.html"></template>
+<template src="./MainFrame.html"></template>
 <script lang="ts">
 
 import { defineComponent } from "vue";
@@ -22,6 +22,7 @@ export default defineComponent({
             //         this.$router.replace('/login'); // 다시 로그인하도록 권유할 것
             //     }
             // });
+            this.$router.replace('/login'); // 다시 로그인하도록 권유할 것
         },
     },
 });

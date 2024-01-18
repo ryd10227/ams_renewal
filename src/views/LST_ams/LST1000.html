@@ -20,21 +20,16 @@
         <!-- 상세 카테고리 변경 -->
         <div class="search_row">
             <select v-model="selectedOption" @change="updateInputType">
-                <option value="assetCode">자산코드</option>
                 <option value="assetType">자산종류</option>
                 <option value="manufacturer">제조사</option>
                 <option value="serialNum">S/N</option>
-                <option v-if="selectedCategory !== 'sw'" value="HWModel">모델명</option>
                 <option value="assetState">자산상태</option>
-                <option v-if="selectedCategory !== 'sw'" value="HWLocation">위치</option>
                 <option value="department">부서</option>
-                <option value="user">현사용자</option>
+                <option value="user">사용자</option>
                 <option value="exUser">전사용자</option>
-                <option value="buyDate">구매일</option>
-                <option value="payDate">지급일</option>
+                <option v-if="selectedCategory !== 'sw'" value="HWModel">모델명</option>
+                <option v-if="selectedCategory !== 'sw'" value="returnedDate">반납일</option>
                 <option v-if="selectedCategory !== 'hw'" value="SWExpireDate">만료일</option>
-                <option v-if="selectedCategory !== 'sw'" value="HWReturnDate">반납예정일</option>
-                <option value="returnedDate">반납일</option>
             </select>
 
             <!-- 검색창 -->
@@ -98,11 +93,7 @@
                         <tr class="tr_detail">
                             <td colspan="4">
                                 <div class="detail_cont">
-                                    <!-- 목록 상세 조회 -->
-                                    <!-- <div class="aware">
-                                        <p>* 해당 항목의 최신 정보를 조회합니다.</p>
-                                        <p>* 변경이력 등 상세내역은 PC에서 확인해주세요.</p>
-                                    </div> -->
+                                  
                                     <div class="reg_from">
                                         <dl>
                                             <dt>자산종류</dt>

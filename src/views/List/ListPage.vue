@@ -1,4 +1,4 @@
-<template src="./LST1000.html"></template>
+<template src="./ListPage.html"></template>
 <script lang="ts">
 import { defineComponent } from "vue";
 

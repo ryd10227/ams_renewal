@@ -1,9 +1,9 @@
-import Login from '../views/LOG/LOG1000.vue';
-import FPW from '../views/FPW/FPW1000.vue';
-import MainFrame from '../views/MFR/MFR1000.vue';
-import Dashboard from '../views/HOM/HOM1000.vue';
-import List from '../views/LST/LST1000.vue';
-import Add from '../views/ADD/ADD1000.vue';
+import Login from '../views/Login/LoginPage.vue';
+import FindPw from '../views/FindPw/FindPwPage.vue';
+import MainFrame from '../views/MainFrame/MainFrame.vue';
+import Dashboard from '../views/Dashboard/DashboardPage.vue';
+import List from '../views/List/ListPage.vue';
+import Add from '../views/Add/AddPage.vue';
 import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
@@ -18,7 +18,7 @@ const routes: Array<RouteRecordRaw> = [
     },
     {
         path: '/fpw',
-        component: FPW
+        component: FindPw
     },
     {
         path: '/main',

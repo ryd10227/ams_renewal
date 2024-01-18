@@ -1,4 +1,4 @@
-<template src="./FPW1000.html"></template>
+<template src="./FindPwPage.html"></template>
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 
