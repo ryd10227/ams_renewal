@@ -4,14 +4,41 @@
     <fieldset>
       <legend>Login</legend>
       <h1>AMS asset management system</h1>
-      
-      <div class="login_inp_row id error">
+
+      <!-- 아이디, 비밀번호 입력칸 -->
+      <div class="login_inp_row id" :class="{ error: loginFailed }">
+        <input type="text" id="inpId" v-model="userId" placeholder="아이디 입력" />
+      </div>
+      <div class="login_inp_row pw" :class="{ error: loginFailed }">
+        <input :type="pw ? 'text':'password' " id="inpPass" v-model="userPw" placeholder="비밀번호 입력" />
+        <button type="button" class="btn_pw" @click="pw = !pw" :class="{ show: pw }">
+          <span>{{ pw ? 'Password Hide' : 'Password Show' }}</span>
+        </button>
+      </div>
+
+      <!-- 로그인 에러 시 메시지 -->
+      <p class="txt_inp_guide">{{ loginErrorTxt }}</p>
+
+      <div class="btn_area">
+        <button type="button" class="btn_login" @click="loginMethod" :class="{bt_loading: bt_loading}">로그인</button>
+      </div>
+
+      <!-- 아이디 저장, 비밀번호 찾기 버튼 -->
+      <div class="login_chk">
+        <label><input type="checkbox" id="chkSaveId" name="" v-model="chkSaveId" /><span>아이디 저장</span></label>
+        <button type="button" @click="$router.push('fpw')">비밀번호 찾기</button>
+      </div>
+    </fieldset>
+  </ion-content>
+
+
+  <!-- <div class="login_inp_row id error">
         <input type="text" id="" placeholder="아이디 입력" />
       </div>
       <div class="login_inp_row pw error">
-        <input type="password" id="" placeholder="비밀번호 입력" />
-        <!-- btn_pw :: "show" class toggle -->
-        <button type="button" class="btn_pw" @click="pw = !pw" :class="{show : pw}"><span>password show/hide</span></button>
+        <input type="password" id="" placeholder="비밀번호 입력" /> -->
+  <!-- btn_pw :: "show" class toggle -->
+  <!-- <button type="button" class="btn_pw" @click="pw = !pw" :class="{show : pw}"><span>password show/hide</span></button>
       </div>
       <p class="txt_inp_guide cen none"><em>아이디 또는 비밀번호를 확인해 주세요.</em></p>
 
@@ -24,7 +51,7 @@
         <button type="button"><span>비밀번호 찾기</span></button>
       </div>
     </fieldset>
-  </ion-content>
+  </ion-content> -->
   <!-- //contents area -->
 
   <!-- footer -->

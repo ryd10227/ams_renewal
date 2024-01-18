@@ -1,40 +1,33 @@
 <ion-page class="page_wrapper Login_page">
-    <!-- header -->
     <ion-header class="headerWrap">
-        <!-- title bar -->
         <div class="titleBar">
+            <!-- 뒤로가기 버튼 -->
             <div class="title_btn">
-                <button type="button" class="btn_head_prev text"><span>되돌아가기</span></button>
+                <button type="button" class="btn_head_prev text" @click="$router.back()"></button>
             </div>
         </div>
-        <!-- //title bar -->
     </ion-header>
-    <!-- //header -->
 
-    <!-- contents area -->
+    <!-- 이메일 입력창 -->
     <ion-content class="contentsWrap">
         <fieldset>
             <legend>Login</legend>
             <h1>AMS asset management system</h1>
-            
-            <div class="login_inp_row email">
-                <input type="email" id="" placeholder="이메일 입력" />
+            <div class="login_inp_row email" :class="{ error: !mailSent }">
+                <input type="email" id="email" placeholder="이메일 입력" v-model="userEmail" />
             </div>
-            <p class="txt_inp_guide none">메일이 발송되었습니다.</p>
-            <p class="txt_inp_guide "><em>등록되지 않은 이메일 주소입니다.</em></p>
-            <p class="txt_inp_guide "><em>서버 응답이 없습니다. <br />서버 관리자에게 문의하세요. </em></p>
+            <p class="txt_inp_guide">{{ mailSendError }}</p>
 
             <div class="btn_area">
-                <button type="button" class="btn_login"><span>보내기</span></button>
+                <button type="button" class="btn_login" @click="findClick" :disabled="countingDown">
+                    <span v-show="!countingDown">보내기</span>
+                    <span v-show="countingDown">{{ countdown }}</span>
+                </button>
             </div>
         </fieldset>
     </ion-content>
-    <!-- //contents area -->
 
-    <!-- footer -->
     <ion-footer>
         <p class="copyright">© 2023 Mobile C&amp;C Corp. All Rights Reserved</p>
     </ion-footer>
-    <!-- //footer -->
-    
 </ion-page>
