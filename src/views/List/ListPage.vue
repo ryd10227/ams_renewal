@@ -1,26 +1,8 @@
-<template>
-	<ion-content class="contentsWrap">
-		<div class="web_container sub_container">
-
-			<div class="searchWrap">
-				<!-- <ChangeTabs :isListTab="true" v-model="selectedCategory" /> -->
-				<ChangeTabs :isListTab="true" v-model:selectedCategory="selectedCategory" />
-
-				<div class="search_row">
-					<SearchBox />
-					<AddBtn />
-				</div>
-
-			</div>
-
-			<RenderList :selectedCategory="selectedCategory" />
-
-		</div>
-	</ion-content>
-</template>
+<template src="./ListPage.html"></template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, computed } from "vue";
 import { ChangeTabs, SearchBox, AddBtn, RenderList } from '@/components/List';
+import { useStore } from 'vuex';
 
 export default defineComponent({
 	name: "ListPage",
@@ -28,8 +10,9 @@ export default defineComponent({
 		ChangeTabs, SearchBox, AddBtn, RenderList,
 	},
 	setup() {
-		//vuex로 카테고리 저장하는 걸로 바꾸기
-		const selectedCategory = ref('전체');
+		// 중앙 상태에서 selectedCategory를 가져옴
+		const store = useStore();
+		const selectedCategory = computed(() => store.state.selectedCategory);
 
 		return {
 			selectedCategory,

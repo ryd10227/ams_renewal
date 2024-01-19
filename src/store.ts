@@ -5,7 +5,7 @@ export default createStore({
     dataList: [], // 입력된 데이터를 저장하는 배열
     platformInfo: null, // 기기등록 버튼 플랫폼 정보
     currentPath: '', // Path 설정
-    selectedCategory: 'entire',
+    selectedCategory: '전체',
   },
   mutations: {
     // ADD1000 에서 자산 추가하는 메소드
@@ -30,7 +30,5 @@ export default createStore({
     },
   },
   getters: {
-    // 자산 카테고리 getter
-    selectedCategory: (state) => state.selectedCategory,
   },
 });

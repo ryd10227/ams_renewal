@@ -1,0 +1,17 @@
+<ion-content class="contentsWrap">
+    <div class="web_container sub_container">
+
+        <div class="searchWrap">
+            <ChangeTabs :isListTab="true" v-model:selectedCategory="selectedCategory" />
+
+            <div class="search_row">
+                <SearchBox />
+                <AddBtn :selectedCategory="selectedCategory" />
+            </div>
+
+        </div>
+
+        <RenderList :selectedCategory="selectedCategory" />
+
+    </div>
+</ion-content>

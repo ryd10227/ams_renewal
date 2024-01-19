@@ -13,26 +13,13 @@ export default defineComponent({
     VDatePicker,
     ChartAsset, CalendarDate, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate,
   },
-  setup() {
-    // const onSwiper = (swiper: any) => {
-    //   console.log(swiper);
-    // };
-    // const onSlideChange = () => {
-    //   console.log('slide change');
-    // };
-    // return {
-    //   onSwiper,
-    //   onSlideChange,
-    //   modules: [Pagination],
-    // };
-  },
   methods: {
     // '현재 기기를 자산으로 등록하기' 버튼 클릭 이벤트
     // navigator에서 가져온 디바이스의 플랫폼 정보를 Vuex store 저장, 카테고리를 'hw'로 Vuex store 저장, 하드웨어 자산 추가 페이지로 이동
     registerDevice() {
       const platformInfo = navigator.platform;
       this.$store.commit('setPlatformInfo', platformInfo);
-      this.$store.commit('setSelectedCategory', 'hw');
+      this.$store.commit('setSelectedCategory', '하드웨어');
       this.$router.replace('/main/add');
     },
   },
