@@ -124,8 +124,9 @@ select {height: 44px; padding: 10px 30px 10px 10px; font-weight: 500; font-size:
 .contentsWrap {position: relative; -webkit-flex:1; flex:1; width:100%; --background: #F8F2F2; background-color: #F8F2F2; border-radius: 20px 20px 0 0; overflow: auto;}
 .web_container {max-width: 768px; margin: 0 auto;}
 .sub_container {display: flex; min-height: 100%; flex-direction: column;}
-.cont_card {flex: 1; background-color: #fff; border-radius: 20px 20px 0 0; overflow: hidden;
+.cont_card {flex: 1; background-color: #fff; border-radius: 20px 20px 0 0; overflow: hidden; display:flex; flex-direction: column;
   &.pd {padding: 15px 20px;}
+  &.pn {align-items: center; justify-content: center; color:gray; margin-bottom: 80px;}
   .tableWrap {margin: 0 -10px;}
 }
 

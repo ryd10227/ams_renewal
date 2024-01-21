@@ -1,17 +1,4 @@
-<!-- <template src="./SearchBox.html"></template> -->
-<template>
-    <select v-model="selectedOption">
-        <option v-for="option in options" :key="option.value" :value="option.value">{{ option.label }}</option>
-    </select>
-
-    <div class="inp_box" v-if="!selectedOption.endsWith('Date')">
-        <input type="text" v-model="searchTerm" placeholder="검색" />
-        <button type="button" class="btn_search" @click="search"><span>Search</span></button>
-    </div>
-    <div class="inp_box" v-else>
-        <input type="date" id="" />
-    </div>
-</template>
+<template src="./SearchBox.html"></template>
 <script lang="ts">
 import { defineComponent } from 'vue';
 

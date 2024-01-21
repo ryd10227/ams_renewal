@@ -16,7 +16,7 @@ export default defineComponent({
             if (this.selectedCategory === '전체') {
                 this.$store.commit('setSelectedCategory', '하드웨어');
             }
-            this.$router.push('/main/add');
+            this.$router.replace('/main/add');
         },
     },
 });
