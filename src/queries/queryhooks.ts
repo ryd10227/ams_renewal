@@ -24,7 +24,6 @@ export const getQuery = async (selectedCategory: string, displayedDataList) => {
     }
 };
 
-
 export const deleteQuery = async (selectedCategory: string, selectedItems) => {
     const endpointData = selectedCategoryProp(selectedCategory);
     if (selectedItems.length > 0) {
