@@ -1,6 +1,6 @@
 <template src="./FindPwPage.html"></template>
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 
 
 export default defineComponent({
@@ -12,7 +12,7 @@ export default defineComponent({
 			userEmail: '', // email 정보 저장
 			countingDown: false,
 			countdown: 10,
-			mailSendError: null, // 에러 메시지
+			mailSendError: null as string | null, // 에러 메시지
 			pageUrl: '' // server에 전달할 loading page url
 		};
 	},
@@ -25,7 +25,7 @@ export default defineComponent({
 		// 메일 중복 전송 방지를 위해 버튼을 10초간 비활성화
 		startCountdown() {
 			this.countingDown = true;
-			let count = 10;
+			let count = 5;
 
 			const intervalId = setInterval(() => {
 				this.countdown = count;
@@ -34,12 +34,12 @@ export default defineComponent({
 				if (count < 0) {
 					clearInterval(intervalId);
 					this.countingDown = false;
-					this.countdown = 10; // 초기값으로 리셋
+					this.countdown = 5; // 초기값으로 리셋
 				}
 			}, 1000);
 		},
 
-		isValidEmail(email) {
+		isValidEmail(email: string) {
 			// 이메일 정규식 표현 -> 예외 처리(. 중복 허용 x, 도메인 중복 허용 x)
 			var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+([a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/;
 
@@ -76,20 +76,21 @@ export default defineComponent({
 				}
 				else {
 					// 서버로부터 응답 받았는지 확인하는 변수
-					let isResponseReceived = false;
+					// let isResponseReceived = false;
 
 					// timeout 5초로 설정
-					const timeoutId = setTimeout(() => {
-						if (!isResponseReceived) {
-							this.mailSendError = "서버 응답이 지연되고 있습니다. 잠시 후 다시 시도해주세요.";
-						}
-					}, 5000);
+					// const timeoutId = setTimeout(() => {
+					// 	if (!isResponseReceived) {
+					// 		this.mailSendError = "서버 응답이 지연되고 있습니다. 잠시 후 다시 시도해주세요.";
+					// 	}
+					// }, 5000);
 
-					var mailSendError = "";
+					// var mailSendError = "";
 					var address = window.location.href; // 현재 접속한 ip 및 port 포함된 url 가져오기
 					var networkPath = address.replace('/fpw', '/'); // ip 및 port 번호만 남도록 처리하기
 
 					this.pageUrl = networkPath + "loading";
+					this.startCountdown();
 					// this.$bizMOB.Network.requestTr({
 					// 	"_sTrcode": "AGY0200",
 					// 	"_oHeader": {

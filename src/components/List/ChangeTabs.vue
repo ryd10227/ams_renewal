@@ -29,7 +29,7 @@ export default defineComponent({
         // 중앙 상태에서 selectedCategory를 가져오고, 선택된 카테고리에 따라 selectedCategory를 변경하는 mutation
         const store = useStore();
         const selectedCategory = computed(() => store.state.selectedCategory);
-        const changeCategory = (category) => {
+        const changeCategory = (category: string) => {
             store.commit('setSelectedCategory', category);
         };
 

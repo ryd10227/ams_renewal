@@ -1,6 +1,6 @@
 <template src="./RenderList.html"></template>
 <script lang="ts">
-import { computed, defineComponent, ref, watchEffect } from 'vue';
+import { defineComponent, ref, watchEffect } from 'vue';
 import { RenderInputs } from '@/components/Add'
 import { getQuery, deleteQuery } from '@/queries'
 
@@ -22,45 +22,34 @@ export default defineComponent({
         };
     },
     setup(props) {
-        let displayedDataList = ref([]);
-
-        // renderQuery(props.selectedCategory, displayedDataList);
+        const displayedDataList = ref([]);
         watchEffect(() => { getQuery(props.selectedCategory, displayedDataList); });
-
         return {
             displayedDataList,
         };
     },
     computed: {
         isDeleteButtonEnabled() {
-            return this.displayedDataList.some(item => item.isChecked);
+            return this.displayedDataList.some((item: any) => item.isChecked);
         },
     },
     methods: {
-        selectItem(item) {
+        selectItem(item: any) {
             item.isChecked = !item.isChecked;
         },
         toggleSelectAll() {
-            this.displayedDataList.forEach(item => (item.isChecked = this.isAllChecked));
+            this.displayedDataList.forEach((item: any) => (item.isChecked = this.isAllChecked));
         },
         async deleteItems() {
             const selectedItems = this.displayedDataList.filter(item => item.isChecked);
-            const selectedCategory = computed(() => this.$store.state.selectedCategory);
-            deleteQuery(selectedCategory.value, selectedItems);
+            deleteQuery(this.selectedCategory, selectedItems);
             this.displayedDataList = this.displayedDataList.filter(item => !item.isChecked);
             this.isAllChecked = false;
         },
-        openItemDetails(item) {
+        openItemDetails(item: object) {
             this.selectedItem = item;
             this.tr_open = !this.tr_open;
         },
-        // 아이템 상세보기
-        showDetails(item) {
-            item.tr_open = !item.tr_open;
-            this.selectedData = item;
-            this.tr_open = item.tr_open;
-        },
-        // 아이템 상세보기 취소
         closeDetails() {
             this.tr_open = false;
         },

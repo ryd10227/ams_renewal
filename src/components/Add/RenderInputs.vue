@@ -7,10 +7,6 @@ import { postQuery } from '@/queries';
 export default defineComponent({
     name: "RenderInputs",
     props: {
-        item: {
-            type: Object,
-            required: true,
-        },
     },
     setup() {
         // 중앙 상태에서 selectedCategory를 가져옴

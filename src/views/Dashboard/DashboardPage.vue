@@ -2,7 +2,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { VDatePicker } from 'vuetify/labs/VDatePicker'
-import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import "swiper/css/pagination";
 import { ChartAsset, CalendarDate, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate } from '@/components/Dashboard';
