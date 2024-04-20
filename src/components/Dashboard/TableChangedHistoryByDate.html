@@ -2,13 +2,12 @@
 
 <!-- 캘린더 -->
 <v-date-picker class="home_calendar" v-model="datePicker" :picker-date="datePicker"
-  @update:model-value="dataChanged" ></v-date-picker>
-  <!-- <v-date-picker show-adjacent-months class="home_calendar"></v-date-picker> -->
-  <div class="home_cont">
+  @update:model-value="dataChanged"></v-date-picker>
+<div class="home_cont">
   <div class="title">
     <h3 class="tit date"> <strong>
         <!-- 캘린더에서 선택된 날짜를 표시 -->
-        <CalendarDate class="CalendarDate" :PickedDate='pickedData' />
+        <span>{{ pickedData }}</span>
       </strong></h3>
     <h3 class="tit date">변경이력</h3>
     <div class="opt">

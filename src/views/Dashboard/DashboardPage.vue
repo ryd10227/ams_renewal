@@ -4,13 +4,13 @@ import { defineComponent } from "vue";
 import { VDatePicker } from 'vuetify/labs/VDatePicker'
 import 'swiper/css';
 import "swiper/css/pagination";
-import { ChartAsset, CalendarDate, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate } from '@/components/Dashboard';
+import { ChartAsset, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate } from '@/components/Dashboard';
 
 export default defineComponent({
   name: "DashboardPage",
   components: {
     VDatePicker,
-    ChartAsset, CalendarDate, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate,
+    ChartAsset, TableChangedHistoryByDate, TableHW, TableSW, TableDueDate,
   },
   methods: {
     // '현재 기기를 자산으로 등록하기' 버튼 클릭 이벤트

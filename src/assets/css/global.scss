@@ -214,13 +214,13 @@ select {height: 44px; padding: 10px 30px 10px 10px; font-weight: 500; font-size:
   .v-date-picker-month__day {width: 30px; height: 30px;
     .v-btn--icon.v-btn--density-default {width: 30px; height: 30px; padding-bottom: 2px; font-weight: bold; font-size: 1.125rem; letter-spacing: normal;}
     .v-btn--variant-outlined {position: relative; color: var(--red); border: none;
-      &::before {content: "TODAY"; position: absolute; left: 50%; top: -10px; font-weight: bold; font-size: .8125rem; color: var(--red); transform: translateX(-50%); white-space: nowrap;}
+      &::before {content: "TODAY"; position: absolute; left: 50%; top: -10px; font-weight: bold; font-size: .7rem; color: var(--red); transform: translateX(-50%); white-space: nowrap;}
     }
   }
   .v-date-picker-month__day--selected .v-btn--variant-flat {background-color: var(--primary) !important;}
   .v-date-picker-month__day--week-start:not(.v-date-picker-month__day--adjacent) .v-btn {color: var(--red);}
   .v-date-picker-month__day--week-end:not(.v-date-picker-month__day--adjacent) .v-btn {color: var(--blue);}
-  .v-picker__actions {display: none;}
+  // .v-picker__actions {display: none;}
 }
 
 .home_cont {padding: 15px 20px; border-top: 5px solid #EBEBEB;

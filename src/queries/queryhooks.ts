@@ -1,22 +1,31 @@
 import axios, { AxiosError } from "axios";
 
-const selectedCategoryProp = (selectedCategory: string) => {
+const endPoint = (selectedCategory: string) => {
     switch (selectedCategory) {
         case '전체':
-            return { endPoint: '', itemIndex: 'assetidx' };
+            return '/entire';
+        case '하드웨어':
+            return '/hardwares';
+        case '소프트웨어':
+            return '/softwares';
+        default:
+            return '/entire';
+    }
+}
+
+const selectedCategoryProp = (selectedCategory: string) => {
+    switch (selectedCategory) {
         case '하드웨어':
             return { endPoint: '/hardware', itemIndex: 'hwidx' };
         case '소프트웨어':
             return { endPoint: '/software', itemIndex: 'swidx' };
-        default:
-            return { endPoint: '', itemIndex: 'assetidx' };
     }
 }
 
 export const getQuery = async (selectedCategory: string, displayedDataList) => {
-    const endpointData = selectedCategoryProp(selectedCategory);
+    const endpointData = endPoint(selectedCategory);
     try {
-        const res = await axios.get(`${process.env.VUE_APP_BASE_URL}/assets${endpointData.endPoint}s`);
+        const res = await axios.get(`${process.env.VUE_APP_BASE_URL}/assets${endpointData}`);
         displayedDataList.value = res.data;
     } catch (err) {
         const error = err as AxiosError;
@@ -24,7 +33,7 @@ export const getQuery = async (selectedCategory: string, displayedDataList) => {
     }
 };
 
-export const deleteQuery = async (selectedCategory: string, selectedItems) => {
+export const deleteQuery = async (selectedCategory: string, selectedItems: string | any[]) => {
     const endpointData = selectedCategoryProp(selectedCategory);
     if (selectedItems.length > 0) {
         try {
@@ -43,6 +52,8 @@ export const postQuery = async (selectedCategory: string, dataToSend: object) =>
         await axios.post(`${process.env.VUE_APP_BASE_URL}/assets${endpointData.endPoint}`, dataToSend);
     } catch (err) {
         const error = err as AxiosError;
-        console.error(error);
+        if (error.response.status as number == 409) {
+            alert('이미 등록된 시리얼 넘버입니다. 다시 확인해 주세요.')
+        }
     }
 };

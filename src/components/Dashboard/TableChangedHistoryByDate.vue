@@ -1,19 +1,26 @@
 <!-- 대시보드 페이지 중 날짜별 변경이력 테이블 컴포넌트 -->
 <template src="./TableChangedHistoryByDate.html"></template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import { VDatePicker } from 'vuetify/labs/VDatePicker'
-import CalendarDate from './CalendarDate.vue';
 
 export default defineComponent({
   components: {
     VDatePicker,
-    CalendarDate,
   },
-  data() {
+  setup() {
+    const datePicker = ref(new Date());
+    const pickedData = ref(null);
+
+    const dataChanged = () => {
+      pickedData.value = new Date(datePicker.value.getTime() - (datePicker.value.getTimezoneOffset() * 60000)).toISOString().substring(0, 10);
+      console.log(pickedData.value);
+    };
+
     return {
-      datePicker: new Date(),
-      pickedData: ''
+      datePicker,
+      pickedData,
+      dataChanged
     };
   },
   computed: {
@@ -40,10 +47,11 @@ export default defineComponent({
   },
   methods: {
     // 캘린더에서 날짜 선택 시 호출됨
-    dataChanged() {
-      this.pickedData = (new Date(this.datePicker.getTime() - (this.datePicker.getTimezoneOffset() * 60000)).toISOString()).substring(0, 10);
-      return;
-    },
+    // dataChanged() {
+    //   this.pickedData = (new Date(this.datePicker.getTime() - (this.datePicker.getTimezoneOffset() * 60000)).toISOString()).substring(0, 10);
+    //   console.log(this.pickedData)
+    //   return;
+    // },
 
     // 더보기 버튼 클릭 이벤트, '전체' 카테고리가 선택된 채로 리스트 페이지로 이동
     more() {
